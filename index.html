@@ -16,10 +16,9 @@ body {
   background: #fff0f5;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  color: #7a5c61; /* tom rose gold */
+  color: #7a5c61;
   overflow: hidden;
 }
-
 .container {
   position: relative;
   padding: 40px;
@@ -28,28 +27,24 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   z-index: 1;
 }
-
 .numero {
   font-family: 'Playfair Display', serif;
   font-size: 4em;
   font-weight: 700;
   margin: 0;
 }
-
 .nome {
   font-family: 'Great Vibes', cursive;
   font-size: 6em;
   margin: 0;
   letter-spacing: 1px;
 }
-
 .assinatura {
   font-family: 'Great Vibes', cursive;
   font-size: 2em;
   margin: 0;
   letter-spacing: 1px;
 }
-
 .info {
   font-size: 1.1em;
   letter-spacing: 2px;
@@ -57,7 +52,6 @@ body {
   text-transform: uppercase;
   color: #a0848e;
 }
-
 .linha {
   display: block;
   width: 60px;
@@ -66,7 +60,6 @@ body {
   margin: 10px auto;
   border-radius: 2px;
 }
-
 button {
   background: linear-gradient(90deg, #ff6ec7, #7f00ff);
   border: none;
@@ -79,12 +72,10 @@ button {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
 }
-
 button:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(127, 0, 255, 0.4);
 }
-
 canvas {
   position: fixed;
   top: 0;
@@ -94,7 +85,6 @@ canvas {
   pointer-events: none;
   z-index: 0;
 }
-
 #msg {
   color: #b00;
   font-size: 0.95em;
@@ -120,13 +110,59 @@ canvas {
 
   <button id="btnMusica">✨ Abrir Magia ✨</button>
   <p id="msg"></p>
-  <audio id="musica" controls>
-    <source src="https://drive.google.com/drive/my-drive?hl=pt-br" type="audio/mpeg">
+
+  <!-- Música: substitua "parabens.mp3" pelo seu arquivo local ou link direto -->
+  <audio id="musica">
+    <source src="parabens.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
 </div>
 
 <script>
+// 🎉 Confete
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+function createParticle(x, y) {
+  const colors = ['#ff6ec7','#7f00ff','#ff6347','#ff1493','#ff4500'];
+  const color = colors[Math.floor(Math.random()*colors.length)];
+  particles.push({
+    x, y,
+    size: Math.random()*10+5,
+    speedX: Math.random()*6-3,
+    speedY: Math.random()*6-3,
+    color
+  });
+}
+
+function drawParticles() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach((p,index)=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fillStyle=p.color;
+    ctx.fill();
+    p.x+=p.speedX;
+    p.y+=p.speedY;
+    p.size*=0.98;
+    if(p.size<0.2) particles.splice(index,1);
+  });
+  requestAnimationFrame(drawParticles);
+}
+
+function startConfetti() {
+  setInterval(()=>{
+    createParticle(Math.random()*canvas.width, Math.random()*canvas.height);
+  },100);
+  drawParticles();
+}
+
+startConfetti();
+
 // 🎶 Música
 const musica = document.getElementById('musica');
 const btn = document.getElementById('btnMusica');
@@ -134,8 +170,14 @@ const msg = document.getElementById('msg');
 
 btn.addEventListener('click', async () => {
   try {
-    musica.load();
     await musica.play();
     btn.innerText = '🎶 A magia começou!';
     btn.disabled = true;
+  } catch (err) {
+    msg.innerText = 'Não foi possível tocar a música. Verifique o arquivo.';
+  }
+});
+</script>
 
+</body>
+</html>
