@@ -3,14 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎉 Convite Mágico da Izabela 🎉</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<style>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎉 Convite Especial da Izabela 🎉</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -110,15 +102,14 @@ canvas {
   <span class="linha"></span>
   <p class="info" style="margin-top:20px;">É com muita alegria que convido você para celebrar comigo.</p>
   <p class="info">11 OUT | SÁBADO | 19:00h</p>
-  <p class="info">Empório Castroville (Rua E Um, no 20 - St. Residencial Norte)</p>
+  <p class="info">Empório Castroville — Rua E Um, nº 20, Setor Residencial Norte</p>
   <p class="info" style="margin-top:20px;">Conto com sua presença!</p>
-  <p class="info" style="margin-top:10px; font-size:1em;"></p>
-  <p class="assinatura" style="margin-top:20px;">Com carinho, Izabela</p>
+  <p class="assinatura" style="margin-top:20px;">Com carinho, Izabela 💕</p>
 
   <button id="btnMusica">✨ Abrir Magia ✨</button>
   <p id="msg"></p>
 
-
+  <!-- Música hospedada online -->
   <audio id="musica">
     <source src="https://archive.org/download/pabllo-vittar-psirico-parabens/Pabllo%20Vittar%20feat.%20Psirico%20-%20Parab%C3%A9ns.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
@@ -181,7 +172,7 @@ btn.addEventListener('click', async () => {
     btn.innerText = '🎶 A magia começou!';
     btn.disabled = true;
   } catch (err) {
-    msg.innerText = 'Não foi possível tocar a música. Verifique o arquivo.';
+    msg.innerText = '⚠️ Não foi possível tocar a música. Tente novamente.';
   }
 });
 </script>
