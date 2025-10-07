@@ -1,157 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎉 Convite Mágico da Izabela 🎉</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(180deg, #ffffff, #f7f7ff);
-      color: #333;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎉 Convite Mágico da Izabela 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff, #f0f0ff);
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-    h1 {
-      font-size: 2.2em;
-      font-weight: 600;
-      margin-bottom: 10px;
-      animation: fadeIn 1s ease forwards;
-    }
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease forwards;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
 
-    h2 {
-      font-weight: 400;
-      font-size: 1.3em;
-      margin-bottom: 20px;
-      color: #666;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.5s;
-    }
+h2 {
+  font-weight: 400;
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: #666;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
 
-    p {
-      font-size: 1.1em;
-      color: #444;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-    }
+p {
+  font-size: 1.1em;
+  color: #444;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
 
-    p:nth-of-type(1) { animation-delay: 1s; }
-    p:nth-of-type(2) { animation-delay: 1.5s; }
-    p:nth-of-type(3) { animation-delay: 2s; }
+p:nth-of-type(1) { animation-delay: 1s; }
+p:nth-of-type(2) { animation-delay: 1.5s; }
+p:nth-of-type(3) { animation-delay: 2s; }
 
-    @keyframes fadeIn {
-      to { opacity: 1; transform: none; }
-    }
+@keyframes fadeIn { to { opacity: 1; } }
 
-    button {
-      background: linear-gradient(90deg, #ff6ec7, #7f00ff);
-      border: none;
-      color: white;
-      font-size: 1.2em;
-      padding: 15px 40px;
-      border-radius: 30px;
-      cursor: pointer;
-      margin-top: 40px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
-      animation: pulse 2s infinite;
-    }
+button {
+  background: linear-gradient(90deg, #ff6ec7, #7f00ff);
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+  animation: pulse 2s infinite;
+}
 
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(127, 0, 255, 0.4);
-    }
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(127, 0, 255, 0.4);
+}
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(127, 0, 255, 0.3); }
-      50% { box-shadow: 0 0 25px rgba(255, 110, 199, 0.6); }
-      100% { box-shadow: 0 0 10px rgba(127, 0, 255, 0.3); }
-    }
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(127,0,255,0.3); }
+  50% { box-shadow: 0 0 25px rgba(255,110,199,0.6); }
+  100% { box-shadow: 0 0 10px rgba(127,0,255,0.3); }
+}
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-  </style>
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+</style>
 </head>
 <body>
 
-  <canvas id="confetti"></canvas>
+<canvas id="confetti"></canvas>
 
-  <h1>🎉 Convite Mágico da Izabela 🎉</h1>
-  <h2>✨ Um bug de alegria está prestes a acontecer! ✨</h2>
-  <p>📅 11/10 às 19h</p>
-  <p>📍 Local: Castroville</p>
-  <p>💬 "Quando o código não compila, mas a festa sim!"</p>
+<h1>🎉 Convite Mágico da Izabela 🎉</h1>
+<h2>✨ Um bug de alegria está prestes a acontecer! ✨</h2>
+<p>📅 11/10 às 19h</p>
+<p>📍 Local: Castroville</p>
+<p>💬 "Quando o código não compila, mas a festa sim!"</p>
 
-  <button id="btnMusica">✨ Abrir Magia ✨</button>
+<button id="btnMusica">✨ Abrir Magia ✨</button>
+<p id="msg" style="color:#b00; font-size:0.95em;"></p>
 
-  <audio id="musica" src="https://cdn.pixabay.com/audio/2023/03/29/audio_299d4edb0f.mp3"></audio>
+<audio id="musica" src="https://cdn.pixabay.com/audio/2023/03/29/audio_299d4edb0f.mp3" preload="auto"></audio>
 
-  <script>
-    // 🎊 Confete bonito e suave
-    const canvas = document.getElementById("confetti");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+<script>
+// 🎶 Música
+const musica = document.getElementById('musica');
+const btn = document.getElementById('btnMusica');
+const msg = document.getElementById('msg');
 
-    const confetes = Array.from({ length: 250 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height - canvas.height,
-      size: Math.random() * 8 + 2,
-      color: `hsl(${Math.random() * 360}, 80%, 60%)`,
-      speed: Math.random() * 2 + 1,
-      rotation: Math.random() * 360,
-      rotationSpeed: Math.random() * 4 - 2
-    }));
+btn.addEventListener('click', async () => {
+  try {
+    await musica.play();
+    btn.innerText = '🎶 A magia começou!';
+    btn.disabled = true;
+    msg.innerText = '';
+  } catch (err) {
+    console.error(err);
+    msg.innerText = 'O navegador bloqueou o áudio. Use o player abaixo.';
+    musica.controls = true;
+  }
+});
 
-    function desenharConfetes() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      confetes.forEach(c => {
-        ctx.save();
-        ctx.translate(c.x, c.y);
-        ctx.rotate(c.rotation * Math.PI / 180);
-        ctx.fillStyle = c.color;
-        ctx.fillRect(-c.size / 2, -c.size / 2, c.size, c.size);
-        ctx.restore();
-
-        c.y += c.speed;
-        c.rotation += c.rotationSpeed;
-
-        if (c.y > canvas.height) {
-          c.y = -10;
-          c.x = Math.random() * canvas.width;
-        }
-      });
-      requestAnimationFrame(desenharConfetes);
-    }
-    desenharConfetes();
-
-    // 🎶 Música
-    const btn = document.getElementById("btnMusica");
-    const musica = document.getElementById("musica");
-    btn.addEventListener("click", () => {
-      musica.play();
-      btn.innerText = "🎶 A magia começou!";
-      btn.disabled = true;
-      btn.style.opacity = "0.8";
-    });
-  </script>
-
-</body>
-</html>
+// 🎊 Confete
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext
