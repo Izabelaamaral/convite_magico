@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎉 Convite Especial da Izabela 🎉</title>
+<title>🎉 Convite Mágico da Izabela 🎉</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 body {
@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fffafc;
+  background: #fff0f5;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #7a5c61;
@@ -35,7 +35,7 @@ body {
 }
 .nome {
   font-family: 'Great Vibes', cursive;
-  font-size: 5.5em;
+  font-size: 6em;
   margin: 0;
   letter-spacing: 1px;
 }
@@ -47,7 +47,7 @@ body {
 }
 .info {
   font-size: 1.1em;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-top: 10px;
   text-transform: uppercase;
   color: #a0848e;
@@ -100,18 +100,20 @@ canvas {
   <p class="nome">Comemoração dos meus</p>
   <p class="numero">31 anos</p>
   <span class="linha"></span>
-  <p class="info" style="margin-top:20px;">É com muita alegria que convido você para celebrar comigo.</p>
+  <p class="info" style="margin-top:20px; font-size:1em;">É com muita alegria que convido você para comemorar meu aniversário.</p>
+  <p class="info" style="margin-top:20px; font-size:1em;">Será um prazer compartilhar este momento especial na sua companhia.</p>
   <p class="info">11 OUT | SÁBADO | 19:00h</p>
-  <p class="info">Empório Castroville — Rua E Um, nº 20, Setor Residencial Norte</p>
-  <p class="info" style="margin-top:20px;">Conto com sua presença!</p>
-  <p class="assinatura" style="margin-top:20px;">Com carinho, Izabela 💕</p>
+  <p class="info">Empório Castroville (Rua E Um, no 20 - St. Residencial Norte)</p>
+  <p class="info" style="margin-top:20px; font-size:1em;">Conto com sua presença!</p>
+  <p class="info" style="margin-top:10px; font-size:1em;">Com carinho,</p>
+  <p class="assinatura" style="margin-top:10px; font-size:1em;">Izabela,</p>
 
   <button id="btnMusica">✨ Abrir Magia ✨</button>
   <p id="msg"></p>
 
-  <!-- Música hospedada online -->
+  <!-- Música: substitua "parabens.mp3" pelo seu arquivo local ou link direto -->
   <audio id="musica">
-    <source src="https://archive.org/download/pabllo-vittar-psirico-parabens/Pabllo%20Vittar%20feat.%20Psirico%20-%20Parab%C3%A9ns.mp3" type="audio/mpeg">
+    <source src="parabens.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
 </div>
@@ -172,7 +174,7 @@ btn.addEventListener('click', async () => {
     btn.innerText = '🎶 A magia começou!';
     btn.disabled = true;
   } catch (err) {
-    msg.innerText = '⚠️ Não foi possível tocar a música. Tente novamente.';
+    msg.innerText = 'Não foi possível tocar a música. Verifique o arquivo.';
   }
 });
 </script>
