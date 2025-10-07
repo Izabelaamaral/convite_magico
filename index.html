@@ -100,20 +100,18 @@ canvas {
   <p class="nome">Comemoração dos meus</p>
   <p class="numero">31 anos</p>
   <span class="linha"></span>
-  <p class="info" style="margin-top:20px; font-size:1em;">É com muita alegria que convido você para comemorar meu aniversário.</p>
-  <p class="info" style="margin-top:20px; font-size:1em;">Será um prazer compartilhar este momento especial na sua companhia.</p>
+  <p class="info" style="margin-top:20px; font-size:1em;">É com muita alegria que convido você para celebrar comigo.</p>
   <p class="info">11 OUT | SÁBADO | 19:00h</p>
   <p class="info">Empório Castroville (Rua E Um, no 20 - St. Residencial Norte)</p>
-  <p class="info" style="margin-top:20px; font-size:1em;">Conto com sua presença!</p>
-  <p class="info" style="margin-top:10px; font-size:1em;">Com carinho,</p>
-  <p class="assinatura" style="margin-top:10px; font-size:1em;">Izabela,</p>
+  <p class="info" style="margin-top:20px; font-size:1.1em;">Conto com sua presença!</p>
+  <p class="assinatura" style="margin-top:10px; font-size:2em;">Com carinho, Izabela,</p>
 
   <button id="btnMusica">✨ Abrir Magia ✨</button>
   <p id="msg"></p>
 
-  <!-- Música: substitua "parabens.mp3" pelo seu arquivo local ou link direto -->
+  <!-- 🎶 Música online (Pabllo Vittar feat. Psirico - Parabéns) -->
   <audio id="musica">
-    <source src="parabens.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/pabllo-vittar-psirico-parabens/Pabllo%20Vittar%20feat.%20Psirico%20-%20Parab%C3%A9ns.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
 </div>
@@ -133,51 +131,4 @@ function createParticle(x, y) {
   particles.push({
     x, y,
     size: Math.random()*10+5,
-    speedX: Math.random()*6-3,
-    speedY: Math.random()*6-3,
-    color
-  });
-}
-
-function drawParticles() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach((p,index)=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fillStyle=p.color;
-    ctx.fill();
-    p.x+=p.speedX;
-    p.y+=p.speedY;
-    p.size*=0.98;
-    if(p.size<0.2) particles.splice(index,1);
-  });
-  requestAnimationFrame(drawParticles);
-}
-
-function startConfetti() {
-  setInterval(()=>{
-    createParticle(Math.random()*canvas.width, Math.random()*canvas.height);
-  },100);
-  drawParticles();
-}
-
-startConfetti();
-
-// 🎶 Música
-const musica = document.getElementById('musica');
-const btn = document.getElementById('btnMusica');
-const msg = document.getElementById('msg');
-
-btn.addEventListener('click', async () => {
-  try {
-    await musica.play();
-    btn.innerText = '🎶 A magia começou!';
-    btn.disabled = true;
-  } catch (err) {
-    msg.innerText = 'Não foi possível tocar a música. Verifique o arquivo.';
-  }
-});
-</script>
-
-</body>
-</html>
+    speedX: Math.ra
