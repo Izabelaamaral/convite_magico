@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎉 Convite Mágico da Izabela 🎉</title>
+<title>🎉 Convite Especial da Izabela 🎉</title>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
 body {
@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff0f5;
+  background: #fffafc;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   color: #7a5c61;
@@ -35,7 +35,7 @@ body {
 }
 .nome {
   font-family: 'Great Vibes', cursive;
-  font-size: 6em;
+  font-size: 5.5em;
   margin: 0;
   letter-spacing: 1px;
 }
@@ -47,7 +47,7 @@ body {
 }
 .info {
   font-size: 1.1em;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-top: 10px;
   text-transform: uppercase;
   color: #a0848e;
@@ -100,84 +100,10 @@ canvas {
   <p class="nome">Comemoração dos meus</p>
   <p class="numero">31 anos</p>
   <span class="linha"></span>
-  <p class="info" style="margin-top:20px; font-size:1em;">É com muita alegria que convido você para comemorar meu aniversário.</p>
-  <p class="info" style="margin-top:20px; font-size:1em;">Será um prazer compartilhar este momento especial na sua companhia.</p>
+  <p class="info" style="margin-top:20px;">É com muita alegria que convido você para celebrar comigo.</p>
   <p class="info">11 OUT | SÁBADO | 19:00h</p>
-  <p class="info">Empório Castroville (Rua E Um, no 20 - St. Residencial Norte)</p>
-  <p class="info" style="margin-top:20px; font-size:1em;">Conto com sua presença!</p>
-  <p class="info" style="margin-top:10px; font-size:1em;">Com carinho,</p>
-  <p class="assinatura" style="margin-top:10px; font-size:1em;">Izabela,</p>
+  <p class="info">Empório Castroville — Rua E Um, nº 20, Setor Residencial Norte</p>
+  <p class="info" style="margin-top:20px;">Conto com sua presença!</p>
+  <p class="assinatura" style="margin-top:20px;">Com carinho, Izabela 💕</p>
 
-  <button id="btnMusica">✨ Abrir Magia ✨</button>
-  <p id="msg"></p>
-
-  <!-- Música: substitua "parabens.mp3" pelo seu arquivo local ou link direto -->
-  <audio id="musica">
-    <source src="parabens.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-</div>
-
-<script>
-// 🎉 Confete
-const canvas = document.getElementById('confetti');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-function createParticle(x, y) {
-  const colors = ['#ff6ec7','#7f00ff','#ff6347','#ff1493','#ff4500'];
-  const color = colors[Math.floor(Math.random()*colors.length)];
-  particles.push({
-    x, y,
-    size: Math.random()*10+5,
-    speedX: Math.random()*6-3,
-    speedY: Math.random()*6-3,
-    color
-  });
-}
-
-function drawParticles() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach((p,index)=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-    ctx.fillStyle=p.color;
-    ctx.fill();
-    p.x+=p.speedX;
-    p.y+=p.speedY;
-    p.size*=0.98;
-    if(p.size<0.2) particles.splice(index,1);
-  });
-  requestAnimationFrame(drawParticles);
-}
-
-function startConfetti() {
-  setInterval(()=>{
-    createParticle(Math.random()*canvas.width, Math.random()*canvas.height);
-  },100);
-  drawParticles();
-}
-
-startConfetti();
-
-// 🎶 Música
-const musica = document.getElementById('musica');
-const btn = document.getElementById('btnMusica');
-const msg = document.getElementById('msg');
-
-btn.addEventListener('click', async () => {
-  try {
-    await musica.play();
-    btn.innerText = '🎶 A magia começou!';
-    btn.disabled = true;
-  } catch (err) {
-    msg.innerText = 'Não foi possível tocar a música. Verifique o arquivo.';
-  }
-});
-</script>
-
-</body>
-</html>
+  <button id=
